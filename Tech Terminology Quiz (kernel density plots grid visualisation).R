@@ -10,6 +10,8 @@ dir <- "C:/Users" #Change to filepath for where you have saved the data
 setwd(dir)
 
 #Load data
+# Each column of the demo dataset has been randomised individually
+# whilst the overall distribution remains correct, the rows do not correspond to an individual's response
 data <- read.csv("PlanTech Quiz Data (random sort).csv") #Set to file path for your 
 
 plots <- c()
