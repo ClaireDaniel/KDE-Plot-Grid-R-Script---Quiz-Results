@@ -20,7 +20,7 @@ plots <- c()
 i = 1
 for (col in colnames(data)){
 
-term <- gsub("\\.", " ", col) #Extract title of plot from column name and fix formatting
+term <- gsub("//.", " ", col) #Extract title of plot from column name and fix formatting
 
 score <- round(mean(data[,col]), 1) #Calculate average score to insert line
 
@@ -46,7 +46,7 @@ i = i + 1
 
 # Use the grid.arrange function to arrange plots on page
 title = textGrob("Urban Planners' Familiarity with Tech Terminology", hjust = 0.56, gp=gpar(fontface="bold", fontsize=80, col = "grey39"))
-note = textGrob("Scale from 1 (never heard of) to 7 (know well and could explain). \n Results based on 16 responses. Survey ran from 16 - 24 March 2019, promoted at PIA Congress 2019 on the Gold Coast", hjust = 0.56, gp=gpar(fontface="bold", fontsize=40, col = "grey39"))
+note = textGrob("Scale from 1 (never heard of) to 7 (know well and could explain). /n Results based on 16 responses. Survey ran from 16 - 24 May 2019, promoted at PIA Congress 2019 on the Gold Coast", hjust = 0.56, gp=gpar(fontface="bold", fontsize=40, col = "grey39"))
 g <- grid.arrange(grobs = plots, ncol = 4, top = title, bottom = note)
 
 ggsave("poster.png", g, width = 80, height = 100, units = "cm",
