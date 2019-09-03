@@ -6,7 +6,7 @@ require(grid)
 require(gridExtra)
 
 #set working directory
-dir <- "C:/Users" #Change to filepath for where you have saved the data
+dir <- "C:/Users/z5239548/OneDrive - UNSW/PIA Digital Planning/KDE-Plot-Grid-R-Script-Quiz-Results" #Change to filepath for where you have saved the data
 setwd(dir)
 
 #Load data
@@ -32,7 +32,7 @@ plots[[i]] <-ggplot(data, aes_string(col)) +
           axis.line = element_blank(),
           axis.title.x = element_blank(),
           axis.title.y = element_blank(),
-          axis.text.x = element_text(size = 30, face = "bold", vjust=(3)),
+          axis.text.x = element_text(size = 26, face = "bold", vjust=(3)),
           panel.background = element_rect(fill = 'white'),
           plot.margin = unit(c(2,1,2,1), "cm")) +
     scale_x_continuous("Familiarity", breaks=c(1, score ,7), labels = c("1",as.character(score), "7"), limits=c(1,7)) +
@@ -45,8 +45,8 @@ i = i + 1
 }
 
 # Use the grid.arrange function to arrange plots on page
-title = textGrob("Urban Planners' Familiarity with Tech Terminology", hjust = 0.56, gp=gpar(fontface="bold", fontsize=80, col = "grey39"))
-note = textGrob("Scale from 1 (never heard of) to 7 (know well and could explain). /n Results based on 16 responses. Survey ran from 16 - 24 May 2019, promoted at PIA Congress 2019 on the Gold Coast", hjust = 0.56, gp=gpar(fontface="bold", fontsize=40, col = "grey39"))
+title = textGrob("Urban Planners' Familiarity with Tech Terminology \n ", hjust = 0.56, gp=gpar(fontface="bold", fontsize=80, col = "grey39"))
+note = textGrob("Scale from 1 (never heard of) to 7 (know well and could explain). \n Results based on 16 responses. Survey ran from 16 - 24 May 2019, promoted at PIA Congress 2019 on the Gold Coast", hjust = 0.56, gp=gpar(fontface="bold", fontsize=35, col = "grey39"))
 g <- grid.arrange(grobs = plots, ncol = 4, top = title, bottom = note)
 
 ggsave("poster.png", g, width = 80, height = 100, units = "cm",
